@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; }
+    .checkout-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .stepper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .step {
+      text-align: center;
+      flex: 1;
+      font-size: 14px;
+    }
+    .step span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      background: #ddd;
+      color: #000;
+      margin-bottom: 5px;
+    }
+    .step.active span {
+      background: #28a745;
+      color: #fff;
+    }
+    .payment-options input {
+      margin-right: 10px;
+    }
+    .btn-payment {
+      background-color: #ff5c5c;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+    }
+    .btn-payment:hover {
+      background-color: #e14a4a;
+    }
+    .offer-box {
+      border: 1px dashed #ccc;
+      padding: 10px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      background: #fdfdfd;
+    }
+    .input-card {
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 8px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-4">
+
+  <!-- Stepper -->
+  <div class="stepper">
+    <div class="step active">
+      <span>1</span><br>
+      Select Address
+    </div>
+    <div class="step active">
+      <span>2</span><br>
+      Review Cart
+    </div>
+    <div class="step">
+      <span>3</span><br>
+      Select Payment
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left Column: Payment Modes -->
+    <div class="col-md-4">
+      <div class="checkout-box">
+        <h6 class="fw-bold mb-3">Select Payment Mode</h6>
+        <div class="payment-options">
+          <div><input type="radio" name="pay" checked> Cards</div>
+          <div><input type="radio" name="pay"> UPI</div>
+          <div><input type="radio" name="pay"> Net Banking</div>
+          <div><input type="radio" name="pay"> Wallet</div>
+          <div><input type="radio" name="pay"> Pay Later</div>
+          <div><input type="radio" name="pay"> Cash On Delivery</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Column: Card Details -->
+    <div class="col-md-5">
+      <div class="checkout-box">
+        <h6 class="fw-bold mb-3">Cards</h6>
+        <div class="offer-box">
+          💳 Get 100% Cashback instantly on prepaid orders! Place order using Debit/Credit cards, 
+          Net Banking, Wallets, UPI etc., and get 89 CluesBucks+ instantly
+        </div>
+
+        <input type="text" class="input-card" placeholder="Card Number">
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" class="input-card" placeholder="Valid Thru (MM/YY)">
+          </div>
+          <div class="col-md-6">
+            <input type="password" class="input-card" placeholder="CVV">
+          </div>
+        </div>
+        <button class="btn btn-danger w-100 mt-2">ADD CARD</button>
+      </div>
+    </div>
+
+    <!-- Right Column: Price Details -->
+    <div class="col-md-3">
+      <div class="checkout-box">
+        <h6 class="fw-bold mb-3">Bank / Wallet Offer</h6>
+        <div class="offer-box">
+          💰 Get Up To ₹7300 Cashback On Mobikwik. Minimum Assured Cashback Is ₹35. Min Txn ₹499
+        </div>
+        <div class="offer-box">
+          📱 ₹6 Cashback On First Order With Airtel Payments Bank. 5% Cashback T&C Apply
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <span>Price (1 Item)</span><span>₹89</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span>Delivery Charges</span><span class="text-success">Free</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span>Platform Fee</span><span class="text-success">Free</span>
+        </div>
+
+        <a href="sucess.html"><button class="btn-payment mt-3">Place order for ₹89</button></a>
+        <p class="small text-center text-muted mt-2">
+          Secure Payment, Easy Returns & Refunds
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

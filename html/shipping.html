@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; }
+    .checkout-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .stepper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .step {
+      text-align: center;
+      flex: 1;
+      font-size: 14px;
+    }
+    .step span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      background: #ddd;
+      color: #000;
+      margin-bottom: 5px;
+    }
+    .step.active span {
+      background: #28a745;
+      color: #fff;
+    }
+    .product-img {
+      max-width: 80px;
+    }
+    .btn-qty {
+      border: 1px solid #ddd;
+      padding: 5px 12px;
+      font-size: 16px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .btn-payment {
+      background-color: #ff5c5c;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+    }
+    .btn-payment:hover {
+      background-color: #e14a4a;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-4">
+  
+  <!-- Stepper -->
+  <div class="stepper">
+    <div class="step active">
+      <span>1</span><br>
+      Select Address
+    </div>
+    <div class="step">
+      <span>2</span><br>
+      Review Cart
+    </div>
+    <div class="step">
+      <span>3</span><br>
+      Select Payment
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Left: Cart -->
+    <div class="col-md-8">
+      <div class="checkout-box">
+        <!-- Address -->
+        <div class="d-flex justify-content-between mb-3">
+          <div>
+            <strong>Shipping to :</strong> HOME, Name <br>
+            <small>12, A Anna Nagar, Metur Chennai</small>
+          </div>
+          <button class="btn btn-outline-primary btn-sm">Change</button>
+        </div>
+        <hr>
+
+        <!-- Cart Item -->
+        <div class="d-flex align-items-center mb-3">
+          <img src="../images/imagebb.png" class="product-img me-3" alt="Product">
+          <div class="flex-grow-1">
+            <p class="mb-1 fw-bold">Globus Naturals Gold Radiance Face Pack</p>
+            <p class="text-muted small mb-1">150 ml</p>
+            <div class="d-flex align-items-center">
+              <button class="btn-qty">-</button>
+              <span class="mx-2">1</span>
+              <button class="btn-qty">+</button>
+              <a href="#" class="ms-3 text-danger small">Remove</a>
+            </div>
+          </div>
+          <div class="text-end">
+            <p class="fw-bold">₹89</p>
+            <small class="text-muted">Inclusive of all taxes</small>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="mt-3">
+          <div class="d-flex justify-content-between">
+            <span>Total Order Value</span><span>₹319</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span>Discount</span><span class="text-success">- ₹230</span>
+          </div>
+          <div class="d-flex justify-content-between border-bottom pb-2">
+            <span>Total Shipping Charges</span><span class="text-success">FREE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Price Details -->
+    <div class="col-md-4">
+      <div class="checkout-box">
+        <h6 class="mb-3">Apply Coupons</h6>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span>No CB/CB+ Available</span>
+          <a href="#" class="text-decoration-none">Redeem</a>
+        </div>
+        <div class="bg-light p-2 small mb-3">
+          💳 Get 100% Cashback instantly on prepaid orders! Place order using Debit/Credit cards, 
+          Net Banking, Wallets, UPI etc., and get 89 CluesBucks+ instantly
+        </div>
+        <div class="d-flex justify-content-between">
+          <span>Total Order Value</span><span>₹319</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span>Total Discount</span><span class="text-success">- ₹230</span>
+        </div>
+        <div class="d-flex justify-content-between fw-bold border-top pt-2">
+          <span>Grand Total</span><span>₹89</span>
+        </div>
+        <a href="payment.html"><button class="btn-payment mt-3">Proceed to payments</button></a>
+        <p class="small text-center text-muted mt-2">
+          Secure Payment, Easy Returns & Refunds
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

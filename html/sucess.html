@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You - Order Confirmation</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #e8f6f9;
+      --card-bg: #ffffff;
+      --muted: #7b7b7b;
+      --accent-start: #e99f74;
+      --accent-end: #d15a7b;
+      --green: #2db32d;
+      --shadow: 0 6px 18px rgba(10,10,10,0.08);
+      --radius: 8px;
+      --max-width: 860px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 20px;
+    }
+
+    .panel{
+      width:100%;
+      max-width: var(--max-width);
+      text-align:center;
+    }
+
+    /* top check mark */
+    .check {
+      width:72px;
+      height:72px;
+      border-radius:999px;
+      background: linear-gradient(180deg,#39b42a,#1e9b1a);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin:10px auto 18px;
+      box-shadow: 0 6px 18px rgba(30,120,30,0.12);
+    }
+    .check svg{ width:36px; height:36px; fill:white; }
+
+    h1{
+      font-size:20px;
+      margin:6px 0 8px;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+
+    .subtitle{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:18px;
+      font-weight:500;
+    }
+
+    .order-number {
+      color:#4a4a4a;
+      font-weight:600;
+      margin-bottom:26px;
+    }
+
+    /* Card */
+    .card{
+      background: var(--card-bg);
+      border-radius:10px;
+      padding:26px;
+      text-align:left;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .order-title{
+      text-align:center;
+      font-weight:700;
+      margin-bottom:18px;
+      color:#111;
+    }
+
+    .item-row{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      padding:12px 6px;
+      border-top:1px dashed rgba(0,0,0,0.03);
+      border-bottom:1px dashed rgba(0,0,0,0.03);
+    }
+
+    .product-thumb{
+      width:88px;
+      height:88px;
+      flex: 0 0 88px;
+      border:1px solid rgba(0,0,0,0.04);
+      border-radius:6px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: #fff;
+    }
+    .product-thumb img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      display:block;
+    }
+
+    .product-info{
+      flex:1;
+      font-size:14px;
+      color:#222;
+      line-height:1.25;
+    }
+    .product-info .name{
+      font-weight:600;
+      margin-bottom:6px;
+    }
+    .price{
+      font-weight:700;
+      min-width:80px;
+      text-align:right;
+      font-size:16px;
+    }
+
+    .summary-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 6px 0;
+      font-weight:700;
+    }
+
+    /* Centered button */
+    .footer{
+      display:flex;
+      justify-content:center;
+      margin-top:20px;
+    }
+    .btn-home{
+      display:inline-block;
+      padding:12px 26px;
+      border-radius:8px;
+      font-weight:700;
+      text-decoration:none;
+      color:#2b1b12;
+      background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+      box-shadow: 0 6px 20px rgba(210,80,100,0.18);
+      border: none;
+      cursor:pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn-home:active{ transform: translateY(1px); }
+    .btn-home:focus{ outline: 3px solid rgba(209,90,123,0.18); }
+
+    /* small screens */
+    @media (max-width:600px){
+      .item-row{ flex-direction:row; gap:12px; }
+      .product-thumb{ width:72px; height:72px; flex:0 0 72px; }
+      .price{ min-width:60px; font-size:15px; }
+      .card{ padding:18px; }
+      h1{ font-size:18px; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+
+      <!-- Check icon -->
+      <div class="check" role="img" aria-label="Success">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9.2 16.6l-4.4-4.4 1.4-1.4 3 3 7.8-7.8 1.4 1.4z"/>
+        </svg>
+      </div>
+
+      <h1>Thank You For Your Purchase</h1>
+      <div class="subtitle">We've Received Your Order — Will Ship 2-5 Business Days.</div>
+      <div class="order-number">Your Order Number Is <strong>#BT55521</strong></div>
+
+      <div class="card" role="region" aria-label="Order summary">
+        <div class="order-title">Order Summary</div>
+
+        <!-- item -->
+        <div class="item-row" aria-hidden="false">
+          <div class="product-thumb" aria-hidden="true">
+            <!-- change src if you want -->
+            <img src="../images/imagebb.png" alt="Product image">
+          </div>
+
+          <div class="product-info">
+            <div class="name">Globus Naturals Gold Radiance Anti Ageing Brightening Face Pack - 100g</div>
+            <div class="meta" style="color:var(--muted); font-size:13px;">Qty: 1 • MRP incl. all taxes</div>
+          </div>
+
+          <div class="price">₹ 89</div>
+        </div>
+
+        <!-- total -->
+        <div class="summary-row" style="border-top:none; margin-top:8px;">
+          <div>Total</div>
+          <div>₹ 89</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <a class="btn-home" href="index.html">Back to Home</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
